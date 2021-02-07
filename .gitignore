@@ -1,0 +1,16 @@
+
+node_modules/.bin/
+
+node_modules/.cache/babel-loader/
+
+node_modules/\@ant-design/icons-svg/inline-svg/outlined/
+
+node_modules/\@ant-design/icons-svg/inline-svg/twotone/
+
+node_modules/\@ant-design/icons-svg/lib/asn/
+
+node_modules/\@ant-design/icons/
+
+node_modules/\@babel/core/lib/config/validation/
+
+node_modules/
