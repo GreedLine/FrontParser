@@ -17,6 +17,7 @@ function App() {
     const [response, setResponse] = useState({});
     const [gis, setGis] = useState({});
     const [flamp, setFlamp] = useState({});
+    const [yandex, setYandex] = useState({});
 
 
     const {register, handleSubmit, errors} = useForm();
@@ -44,6 +45,9 @@ function App() {
                     case 'Flamp':
                         setFlamp(data)
                         break;
+                    case 'Yandex':
+                        setYandex(data)
+                        break;
                 }
             });
         })
@@ -62,7 +66,7 @@ function App() {
             <Header/>
             <Content>
                 <Container>
-                    <Title>Введите название компании</Title>
+                    <Title>Введите название компании с учетом регистра и пробелов</Title>
                     <SearchForm onSubmit={handleSubmit(onSubmit)}>
                         <SearchInput type="text" name='companyName' id='companyName'
                                      placeholder="Введите название компании"
@@ -108,6 +112,22 @@ function App() {
                                 <LoadingOutlined style={{fontSize: 24}} spin/>
                             }
                             <ResultSpan>{flamp.value}</ResultSpan>
+                        </ParserContainer>
+                        <ParserContainer>
+                            {yandex.isFinish ?
+                                [
+                                    (
+                                        yandex.isErrorFinish ?
+                                            <Progress type="circle" percent={100} width={25} status="exception"
+                                                      key='0'/> :
+                                            <Progress type="circle" percent={100} width={25} key='0'/>
+                                    )
+
+                                ]
+                                :
+                                <LoadingOutlined style={{fontSize: 24}} spin/>
+                            }
+                            <ResultSpan>{yandex.value}</ResultSpan>
                         </ParserContainer>
                     </ContainerResult>}
                 </Container>
