@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {Layout, Typography, Progress} from 'antd';
 import styled from 'styled-components'
@@ -10,7 +9,7 @@ import io from 'socket.io-client';
 
 function App() {
     const {Header, Content} = Layout;
-    const {Title, Text} = Typography;
+    const {Title} = Typography;
     const axios = require('axios');
 
     const [loader, setLoader] = useState(false);
